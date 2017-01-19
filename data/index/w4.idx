@@ -189,3 +189,5 @@ vlan
 port
 dhcp
 mode
+1024
+2017
