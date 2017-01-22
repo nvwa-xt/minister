@@ -1,0 +1,122 @@
+#Dell Force10基础管理命令   
+    
+Dell Force10    
+    
+适用环境：数据中心                      
+功能：CLI、2层交换、3层交换、路由功能。     
+带宽：1/10/40GbE                         
+支持：ISCSI、NAS                   
+CPU内存：2G
+                                                            
+###命令                                                                
+```
+1.    启动端口命令：no shutdown     #出厂默认所有端口关闭，并工作在三层模式
+2.	删除命令：只需在原配置命令前加”no”
+3.	关闭其他模式：stop jump-start  和 stop  bmp
+4.	显示系统信息：show system
+```
+ 
+                                    
+###接口配置
+
+```
+#enable   				#进入特权模式
+#show interface status     	#显示接口状态
+#config					#进入配置模式
+#interface range te0/0 – 9 	#配置0-9端口
+#no shutdown 			#启动接口
+#switchport				#将接口从默认三层模式切换到二层交换模式
+#exit						#退出配置模式
+```
+
+###开启远程管理
+```
+#config					#进入配置模式
+#ip telnet server enable		#启动telnet服务
+#ip ssh server enable		#启动ssh服务
+```
+
+###建立用户及密码
+```
+#config										#配置
+#username admin password enPa$$w0rd pri 15		#设置用户名为：admin 密码为：enPa$$w0rd
+#enable password enPa$$w0rd					#配置交换机的管理密码
+```
+
+###配置交换机IP和默认路由route
+```
+#config								#配置
+#interface managementEthernet 0/0      #这么长的命令 输前几个后面用Tab就可以
+#ip address 192.168.121.52				#配置IP
+#exit
+#management route 0.0.0.0/0  192.168.100.1 #配置路由，根据实际情况配置
+#end
+```
+
+###基本命令：
+```
+#write		#保存配置
+#reload		#重启    堆叠交换机会对所有堆叠的交换机都重启
+```
+```
+#untagged  	#不打标示     ----》access
+#tagged 	   	#打标示		  ----》trunk
+```
+
+###配置access模式
+```
+开启要配置的端口
+#config
+#interface range te0/1 – 2
+#switchport			#切换到交换模式
+#no shutdown			#启用接口
+#exit
+创建vlan10，并把te0/1、te0/2 以access模式划入vlan10
+#interface vlan 10
+#untagged te0/1,2
+#no shutdown   
+```
+
+###配置trunk模式
+```
+开启配置端口
+#config
+#interface te0/24
+#switchport		#切换到交换模式
+#no shutdown		#启用接口
+#exit
+把te0/24配置成trunk模式，并允许vlan10通过
+#inteface vlan 10
+#tagged te0/24
+#no shutdown
+```
+###Hybird混合模式
+
+###配置生成树STP
+目的：为网络提供路径冗余，同时防止产生环路。
+```
+#使用RSTP协议
+#config
+#protocol spanning-tree rstp 	#设置协议为：rstp
+#no disable           		#启用RSTP生成树
+#exit
+#interface te0/1   #进入端口
+#spanning-tree rstp edge-port 	#启用端口的portfast功能
+#Portfast即：快速端口，能使交换机或中继端口跳过侦听学习状态而进入STP转发状态。
+#PortFast特性必须配置在连接终端或者服务器的端口，而一定不能是连接另一台交换机的接口，否则会造成网络环路，而STP就没有意义了。也就是说PortFast只能配置在接入层交换机中。
+
+#正常状态： 阻塞->>监听―>>学习->>转发
+#portfast ： 阻塞->>转发
+```
+
+###本地端口镜像
+```
+#把te0/20和te0/21的双向流量镜像到te0/23
+#Interface te0/23
+#no switchport
+#no shutdown
+#exit
+#monitor session 0
+#source te0/20 destination te0/23 direction both
+#source te0/21 destination te0/23 driection both
+```

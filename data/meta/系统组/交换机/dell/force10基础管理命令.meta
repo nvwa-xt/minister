@@ -1,0 +1,9 @@
+a:2:{s:7:"current";a:8:{s:4:"date";a:2:{s:7:"created";i:1484901132;s:8:"modified";i:1484901571;}s:7:"creator";s:23:"xiaohui_zhu xiaohui_zhu";s:4:"user";s:7:"xiaohui";s:11:"last_change";a:7:{s:4:"date";i:1484901571;s:2:"ip";s:12:"192.168.5.79";s:4:"type";s:1:"E";s:2:"id";s:50:"系统组:交换机:dell:force10基础管理命令";s:4:"user";s:7:"xiaohui";s:3:"sum";s:0:"";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:7:"xiaohui";s:23:"xiaohui_zhu xiaohui_zhu";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}s:11:"description";a:1:{s:8:"abstract";s:265:"#Dell Force10基础管理命令   
+
+Dell Force10    
+
+适用环境：数据中心                      
+功能：CLI、2层交换、3层交换、路由功能。     
+带宽：1/10/40GbE                         
+支持：ISCSI、NAS                   
+CPU内存：2G";}s:8:"relation";a:1:{s:10:"firstimage";s:0:"";}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1484901132;s:8:"modified";i:1484901571;}s:7:"creator";s:23:"xiaohui_zhu xiaohui_zhu";s:4:"user";s:7:"xiaohui";s:11:"last_change";a:7:{s:4:"date";i:1484901571;s:2:"ip";s:12:"192.168.5.79";s:4:"type";s:1:"E";s:2:"id";s:50:"系统组:交换机:dell:force10基础管理命令";s:4:"user";s:7:"xiaohui";s:3:"sum";s:0:"";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:7:"xiaohui";s:23:"xiaohui_zhu xiaohui_zhu";}}}

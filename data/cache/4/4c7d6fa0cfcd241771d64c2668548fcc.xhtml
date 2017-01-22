@@ -110,11 +110,11 @@ Wiki的页面名字将会被自动地识别为小写字母，并且不允许使�
 注：
 </p>
 <ul>
-<li class="level1"><div class="li">到 <a href="/doku.php?id=wiki:syntax" class="wikilink2" title="wiki:syntax" rel="nofollow">已存在页面</a> 的链接和到 <a href="/doku.php?id=wiki:nonexisting" class="wikilink2" title="wiki:nonexisting" rel="nofollow">未存在页面</a> 的链接，其外观是不同的。</div>
+<li class="level1"><div class="li"> 到 <a href="/doku.php?id=wiki:syntax" class="wikilink2" title="wiki:syntax" rel="nofollow">已存在页面</a> 的链接和到 <a href="/doku.php?id=wiki:nonexisting" class="wikilink2" title="wiki:nonexisting" rel="nofollow">未存在页面</a> 的链接，其外观是不同的。</div>
 </li>
-<li class="level1"><div class="li">默认情况下，DokuWiki不使用 <a href="https://en.wikipedia.org/wiki/CamelCase" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/CamelCase">CamelCase</a> 来自动建立链接，（CamelCase类似于PmWiki中的WikiWord）。但是也可以在 <a href="https://www.dokuwiki.org/config" class="interwiki iw_doku" title="https://www.dokuwiki.org/config">设置文件</a> 中启用它。 Hint: If DokuWiki is a link, then it&#039;s enabled.</div>
+<li class="level1"><div class="li"> 默认情况下，DokuWiki不使用 <a href="https://en.wikipedia.org/wiki/CamelCase" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/CamelCase">CamelCase</a> 来自动建立链接，（CamelCase类似于PmWiki中的WikiWord）。但是也可以在 <a href="https://www.dokuwiki.org/config" class="interwiki iw_doku" title="https://www.dokuwiki.org/config">设置文件</a> 中启用它。 Hint: If DokuWiki is a link, then it&#039;s enabled.</div>
 </li>
-<li class="level1"><div class="li">当一节的标题改变时，该节的书签也会改变，因此，请不要太依靠网页内的链接。</div>
+<li class="level1"><div class="li"> 当一节的标题改变时，该节的书签也会改变，因此，请不要太依靠网页内的链接。</div>
 </li>
 </ul>
 
@@ -143,7 +143,7 @@ Windows共享文件夹，例如 <a href="file://///server/share" class="windows"
 注：
 </p>
 <ul>
-<li class="level1"><div class="li">出于安全原因，只有在微软IE浏览器上才能够直接访问Windows共享文件夹。</div>
+<li class="level1"><div class="li"> 出于安全原因，只有在微软IE浏览器上才能够直接访问Windows共享文件夹。</div>
 </li>
 </ul>
 
@@ -277,28 +277,29 @@ Windows共享文件夹，例如 <a href="file://///server/share" class="windows"
 Dokuwiki支持带编号或不带编号的列表。要使用列表，在文字前加入两个空格，然后使用<code>*</code>标志不带编号的列表，用<code>-</code>标志带编号的列表。
 </p>
 <ul>
-<li class="level1"><div class="li">列表</div>
+<li class="level1"><div class="li"> 列表</div>
 </li>
-<li class="level1 node"><div class="li">第二项</div>
+<li class="level1 node"><div class="li"> 第二项</div>
 <ul>
-<li class="level2"><div class="li">下一层</div>
+<li class="level2"><div class="li"> 下一层</div>
 </li>
 </ul>
 </li>
-<li class="level1"><div class="li">第三项
-</div>
-</li>
-<li class="level1"><div class="li">带编号的列表</div>
-</li>
-<li class="level1 node"><div class="li">第二项</div>
-<ul>
-<li class="level2"><div class="li">用缩进表示更深的层</div>
+<li class="level1"><div class="li"> 第三项</div>
 </li>
 </ul>
+<ol>
+<li class="level1"><div class="li"> 带编号的列表</div>
 </li>
-<li class="level1"><div class="li">完了</div>
+<li class="level1 node"><div class="li"> 第二项</div>
+<ol>
+<li class="level2"><div class="li"> 用缩进表示更深的层</div>
 </li>
-</ul>
+</ol>
+</li>
+<li class="level1"><div class="li"> 完了</div>
+</li>
+</ol>
 <pre class="code">  * 列表
   * 第二项
     * 下一层
@@ -318,45 +319,45 @@ Dokuwiki支持带编号或不带编号的列表。要使用列表，在文字前
 DokuWiki会将一些常用的  <a href="https://en.wikipedia.org/wiki/emoticon" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/emoticon">表情符号</a> 转换为图像。除了默认的表情符号以外，您也可以在 <code>smiley</code> 文件夹中放入更多的表情图，然后在 <code>conf/smileys.conf</code> 中设置它们即可。下面是Dokuwiki包含了的表情图像：
 </p>
 <ul>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" /> %%  <img src="/lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" />   8-)  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_eek.gif" class="icon" alt="8-O" /> %%  <img src="/lib/images/smileys/icon_eek.gif" class="icon" alt="8-O" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_eek.gif" class="icon" alt="8-O" />   8-O  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_sad.gif" class="icon" alt=":-(" /> %%  <img src="/lib/images/smileys/icon_sad.gif" class="icon" alt=":-(" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_sad.gif" class="icon" alt=":-(" />   :-(  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" /> %%  <img src="/lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />   :-)  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />  %%  <img src="/lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />   %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />    =)   </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_doubt.gif" class="icon" alt=":-/" /> %%  <img src="/lib/images/smileys/icon_doubt.gif" class="icon" alt=":-/" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_doubt.gif" class="icon" alt=":-/" />   :-/  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_doubt2.gif" class="icon" alt=":-\" /> %%  <img src="/lib/images/smileys/icon_doubt2.gif" class="icon" alt=":-\" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_doubt2.gif" class="icon" alt=":-\" />   :-\  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_confused.gif" class="icon" alt=":-?" /> %%  <img src="/lib/images/smileys/icon_confused.gif" class="icon" alt=":-?" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_confused.gif" class="icon" alt=":-?" />   :-?  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" /> %%  <img src="/lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />   :-D  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_razz.gif" class="icon" alt=":-P" /> %%  <img src="/lib/images/smileys/icon_razz.gif" class="icon" alt=":-P" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_razz.gif" class="icon" alt=":-P" />   :-P  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_surprised.gif" class="icon" alt=":-O" /> %%  <img src="/lib/images/smileys/icon_surprised.gif" class="icon" alt=":-O" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_surprised.gif" class="icon" alt=":-O" />   :-O  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_silenced.gif" class="icon" alt=":-X" /> %%  <img src="/lib/images/smileys/icon_silenced.gif" class="icon" alt=":-X" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_silenced.gif" class="icon" alt=":-X" />   :-X  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_neutral.gif" class="icon" alt=":-|" /> %%  <img src="/lib/images/smileys/icon_neutral.gif" class="icon" alt=":-|" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_neutral.gif" class="icon" alt=":-|" />   :-|  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> %%  <img src="/lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />   ;-)  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" /> %%  <img src="/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" />   ^_^  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_question.gif" class="icon" alt=":?:" /> %%  <img src="/lib/images/smileys/icon_question.gif" class="icon" alt=":?:" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_question.gif" class="icon" alt=":?:" />   :?:  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> %%  <img src="/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" />   :!:  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_lol.gif" class="icon" alt="LOL" /> %%  <img src="/lib/images/smileys/icon_lol.gif" class="icon" alt="LOL" />  %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/icon_lol.gif" class="icon" alt="LOL" />   LOL  </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> %%  <img src="/lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/fixme.gif" class="icon" alt="FIXME" />   FIXME </div>
 </li>
-<li class="level1"><div class="li"><img src="/lib/images/smileys/delete.gif" class="icon" alt="DELETEME" /> %% <img src="/lib/images/smileys/delete.gif" class="icon" alt="DELETEME" /> %%</div>
+<li class="level1"><div class="li"> <img src="/lib/images/smileys/delete.gif" class="icon" alt="DELETEME" />  DELETEME </div>
 </li>
 </ul>
 
@@ -370,20 +371,8 @@ DokuWiki会将一些常用的  <a href="https://en.wikipedia.org/wiki/emoticon" 
 </p>
 
 <p>
-→ ← ↔ ⇒ ⇐ ⇔
-</p>
-<blockquote><div class="no">
-</div></blockquote>
-<hr />
-</div></blockquote>
-
-<p>
-
-&quot;
-</p>
-
-<p>
-He thought &#039;It&#039;s a man&#039;s world&#039;…“
+→ ← ↔ ⇒ ⇐ ⇔ » « – — 640&times;480 © ™ ®
+“He thought &#039;It&#039;s a man&#039;s world&#039;…”
 </p>
 <pre class="code">-&gt; &lt;- &lt;-&gt; =&gt; &lt;= &lt;=&gt; &gt;&gt; &lt;&lt; -- --- 640x480 (c) (tm) (r)
 &quot;He thought &#039;It&#039;s a man&#039;s world&#039;...&quot;</pre>

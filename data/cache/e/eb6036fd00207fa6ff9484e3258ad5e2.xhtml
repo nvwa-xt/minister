@@ -1,0 +1,76 @@
+
+<p>
+#利用docker快捷安装zabbix
+</p>
+
+<p>
+##安装docker
+</p>
+<ol>
+<li class="level1"><div class="li"> 1.利用DaoCloud加速器安装docker和加速docker镜像<a href="https://dashboard.daocloud.io/" class="urlextern" title="https://dashboard.daocloud.io/">https://dashboard.daocloud.io/</a></div>
+</li>
+<li class="level1"><div class="li"> 2.配置 Docker 加速器：<a href="https://www.daocloud.io/mirror" class="urlextern" title="https://www.daocloud.io/mirror">https://www.daocloud.io/mirror</a></div>
+</li>
+</ol>
+
+<p>
+##安装zabbix
+###利用dao加速拉取zabbix相关镜像
+</p>
+
+<p>
+<code>dao pull busybox:latest                                   
+dao pull monitoringartist/zabbix-db-mariadb:latest                           
+dao pull monitoringartist/zabbix-xxl:latest </code>
+</p>
+
+<p>
+####create /var/lib/mysql as persistent volume storage
+</p>
+
+<p>
+<code>docker run -d -v /var/lib/mysql –name zabbix-db-storage busybox:latest</code>
+</p>
+
+<p>
+####start DB for Zabbix - default 1GB innodb_buffer_pool_size is used
+</p>
+
+<p>
+<code>docker run \                   
+    -d \                        
+    –name zabbix-db \                  
+    -v /backups:/backups \                         
+    -v /etc/localtime:/etc/localtime:ro \                    
+    –volumes-from zabbix-db-storage \                  
+    –env=“MARIADB_USER=zabbix” \                      
+    –env=“MARIADB_PASS=my_password” \                 
+    monitoringartist/zabbix-db-mariadb                                
+</code>
+</p>
+
+<p>
+####start Zabbix linked to started DB
+</p>
+
+<p>
+<code>docker run \                            
+    -d \                                            
+    –name zabbix \             
+    -p 80:80 \                            
+    -p 10051:10051 \                        
+    -v /etc/localtime:/etc/localtime:ro \                     
+    –link zabbix-db:zabbix.db \                    
+    –env=“ZS_DBHost=zabbix.db” \              
+    –env=“ZS_DBUser=zabbix” \               
+    –env=“ZS_DBPassword=my_password” \              
+    monitoringartist/zabbix-xxl:latest</code>
+</p>
+
+<p>
+###wait ~60 seconds for Zabbix initialization                                     
+</p>
+
+<p>
+<strong>Zabbix web will be available on the port 80, Zabbix server on the port 10051</strong>
+</p>
