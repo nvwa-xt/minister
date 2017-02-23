@@ -10,4 +10,3 @@
 *	@user	0
 *	@admin	16
 start	@ALL	1
-电商组:*	@电商组	16
