@@ -1,0 +1,91 @@
+
+<h1 class="sectionedit1" id="利用docker快捷安装zabbix">利用docker快捷安装zabbix</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "利用docker快捷安装zabbix" [0-32] -->
+<h2 class="sectionedit2" id="安装docker">安装docker</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">1.利用DaoCloud加速器安装docker和加速docker镜像<a href="https://dashboard.daocloud.io/" class="urlextern" title="https://dashboard.daocloud.io/">https://dashboard.daocloud.io/</a></div>
+</li>
+<li class="level1"><div class="li">2.配置 Docker 加速器：<a href="https://www.daocloud.io/mirror" class="urlextern" title="https://www.daocloud.io/mirror">https://www.daocloud.io/mirror</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "安装docker" [33-213] -->
+<h2 class="sectionedit3" id="安装zabbix">安装zabbix</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT3 SECTION "安装zabbix" [214-228] -->
+<h3 class="sectionedit4" id="利用dao加速拉取zabbix相关镜像">利用dao加速拉取zabbix相关镜像</h3>
+<div class="level3">
+
+<p>
+<code>dao pull busybox:latest<br/>
+dao pull monitoringartist/zabbix-db-mariadb:latest<br/>
+dao pull monitoringartist/zabbix-xxl:latest </code><br/>
+
+</p>
+
+</div>
+<!-- EDIT4 SECTION "利用dao加速拉取zabbix相关镜像" [229-474] -->
+<h4 class="sectionedit5" id="create_var_lib_mysql_as_persistent_volume_storage">create /var/lib/mysql as persistent volume storage</h4>
+<div class="level4">
+
+<p>
+<code>docker run -d -v /var/lib/mysql –name zabbix-db-storage busybox:latest</code>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "create /var/lib/mysql as persistent volume storage" [475-607] -->
+<h4 class="sectionedit6" id="start_db_for_zabbix_-_default_1gb_innodb_buffer_pool_size_is_used">start DB for Zabbix - default 1GB innodb_buffer_pool_size is used</h4>
+<div class="level4">
+
+<p>
+<code>docker run \<br/>
+    -d \<br/>
+    –name zabbix-db \<br/>
+    -v /backups:/backups \<br/>
+    -v /etc/localtime:/etc/localtime:ro \<br/>
+    –volumes-from zabbix-db-storage \<br/>
+    –env=“MARIADB<em>USER=zabbix” \<br/>
+    –env=“MARIADB</em>PASS=my_password” \<br/>
+    monitoringartist/zabbix-db-mariadb<br/>
+</code>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "start DB for Zabbix - default 1GB innodb_buffer_pool_size is used" [608-1144] -->
+<h4 class="sectionedit7" id="start_zabbix_linked_to_started_db">start Zabbix linked to started DB</h4>
+<div class="level4">
+
+<p>
+<code>docker run \<br/>
+    -d \<br/>
+    –name zabbix \<br/>
+    -p 80:80 \<br/>
+    -p 10051:10051 \<br/>
+    -v /etc/localtime:/etc/localtime:ro \<br/>
+    –link zabbix-db:zabbix.db \<br/>
+    –env=“ZS<em>DBHost=zabbix.db” \<br/>
+    –env=“ZS</em>DBUser=zabbix” \<br/>
+    –env=“ZS<em>DBPassword=my</em>password” \<br/>
+    monitoringartist/zabbix-xxl:latest</code><br/>
+
+</p>
+
+</div>
+<!-- EDIT7 SECTION "start Zabbix linked to started DB" [1145-1722] -->
+<h3 class="sectionedit8" id="wait_60_seconds_for_zabbix_initialization">wait ~60 seconds for Zabbix initialization</h3>
+<div class="level3">
+
+<p>
+<strong>Zabbix web will be available on the port 80, Zabbix server on the port 10051</strong><br/>
+
+</p>
+
+</div>
+<!-- EDIT8 SECTION "wait ~60 seconds for Zabbix initialization" [1723-] -->

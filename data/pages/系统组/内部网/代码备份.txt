@@ -1,5 +1,0 @@
-#安装lnmp环境
-
-##下载
-
-下载地址：[[https://lnmp.org/|下载LNMP]]
