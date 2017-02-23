@@ -1,0 +1,572 @@
+
+<h1 class="sectionedit1" id="dokuwiki格式语法说明">DokuWiki格式语法说明</h1>
+<div class="level1">
+
+<p>
+<a href="/doku.php?id=wiki:dokuwiki" class="wikilink2" title="wiki:dokuwiki" rel="nofollow">DokuWiki</a> 支持一些简单的标记语言, 以尽最大可能使文档看上去更友好。本页面包含了所有你在编辑页面时可能用到的语法的说明。如果需要查看本页源码，只需要点击页面顶部或者底部的 <em>编辑本页</em> 按钮即可。<br/>
+
+如果您是初尝Wiki，那么可以使用 <a href="/doku.php?id=playground:playground" class="wikilink2" title="playground:playground" rel="nofollow">Wiki砂箱</a> 来尽情挥洒。<br/>
+
+通过<a href="https://www.dokuwiki.org/quickbuttons" class="interwiki iw_doku" title="https://www.dokuwiki.org/quickbuttons">快捷按钮</a>，您可以更方便地使用这些标记。
+</p>
+
+<p>
+注：本文档由 jiayq84@gmail.com 根据DokuWiki 2005.2.6版本的语法说明翻译。<br/>
+
+如果您发现什么问题，请您发信告知，谢谢！<br/>
+
+</p>
+
+</div>
+<!-- EDIT1 SECTION "DokuWiki格式语法说明" [1-678] -->
+<h2 class="sectionedit2" id="基本文本格式">基本文本格式</h2>
+<div class="level2">
+
+<p>
+DokuWiki支持 <strong>粗体</strong>， <em>斜体</em>， <em class="u">下划线</em> 以及 <code>等宽体</code> 等格式。当然，您也可以 <strong><em class="u"><em><code>混合使用</code></em></em></strong> 所有这些格式。
+</p>
+<pre class="code">DokuWiki支持 **粗体**， //斜体//， __下划线__ and &#039;&#039;等宽体&#039;&#039; 等格式。
+当然，您也可以 **__//&#039;&#039;混合使用&#039;&#039;//__** 所有这些格式。</pre>
+
+<p>
+可以使用 <sub>下标</sub> 和 <sup>上标</sup>。
+</p>
+<pre class="code">可以使用 &lt;sub&gt;下标&lt;/sub&gt; 和 &lt;sup&gt;上标&lt;/sup&gt;。</pre>
+
+<p>
+您也可以使用 <del>删除线</del> 标记某些信息。
+</p>
+<pre class="code">您也可以使用 &lt;del&gt;删除线&lt;/del&gt; 标记某些信息。</pre>
+
+<p>
+<strong>段落</strong> 是由空行所建立的。如果您想 <strong>强制建立新行</strong> 而不建立段落，您可以使用两个连续的反斜杠+空格或是回车作为标记。请看样例：
+</p>
+
+<p>
+这是一些有着换行标记的文字。<br/>
+请注意
+反斜杠只在回车符之前<br/>
+
+或者在<br/>
+一个空格之前的时候才有效。 \\而这样就并不起作用。
+</p>
+<pre class="code">这是一些有着换行标记的文字。\\ 请注意
+反斜杠只在回车符之前\\
+或者在\\ 一个空格之前的时候才有效。 \\而这样就并不起作用。</pre>
+
+<p>
+请只在必须的时候才使用强制的换行标记。
+</p>
+
+</div>
+<!-- EDIT2 SECTION "基本文本格式" [679-1882] -->
+<h2 class="sectionedit3" id="链接">链接</h2>
+<div class="level2">
+
+<p>
+DokuWiki支持多种形式的链接。
+</p>
+
+</div>
+<!-- EDIT3 SECTION "链接" [1883-1942] -->
+<h3 class="sectionedit4" id="外部链接">外部链接</h3>
+<div class="level3">
+
+<p>
+外部链接会被自动地识别： <a href="http://www.google.com" class="urlextern" title="http://www.google.com">http://www.google.com</a> 或者简单地写作 <a href="http://www.google.com" class="urlextern" title="http://www.google.com">www.google.com</a> - 当然您也可以为链接设置名字： <a href="http://www.google.com" class="urlextern" title="http://www.google.com">链接到google</a>. 类似这样的电子邮件地址： <a href="mailto:andi@splitbrain.org" class="mail" title="andi@splitbrain.org">andi@splitbrain.org</a> 也可以被识别。
+</p>
+<pre class="code">DokuWiki支持多种形式的链接。外部链接会被自动地识别：
+http://www.google.com 或者简单地写作 www.google.com
+- 当然您也可以为链接设置名字： [[http://www.google.com|链接到google]]。
+类似这样的电子邮件地址： &lt;andi@splitbrain.org&gt; 也可以被识别。</pre>
+
+</div>
+<!-- EDIT4 SECTION "外部链接" [1943-2546] -->
+<h3 class="sectionedit5" id="内部链接">内部链接</h3>
+<div class="level3">
+
+<p>
+内部链接可以用方括号创建。您可以只给出链接的地址：<a href="https://www.dokuwiki.org/wiki%3Apagename" class="interwiki iw_doku" title="https://www.dokuwiki.org/wiki%3Apagename">wiki:pagename</a>，也可以附加上链接的名字：<a href="https://www.dokuwiki.org/wiki%3Apagename" class="interwiki iw_doku" title="https://www.dokuwiki.org/wiki%3Apagename">我的链接</a>。Wiki的页面名字将会被自动地识别为小写字母，并且不允许使用特殊字符。
+</p>
+<pre class="code">内部链接可以用方括号创建。您可以只给出链接的地址：[[pagename]]，
+也可以附加上链接的名字：[[pagename|我的链接]]。
+Wiki的页面名字将会被自动地识别为小写字母，并且不允许使用特殊字符。</pre>
+
+<p>
+您可以通过在页面名中使用冒号的方式来使用 <a href="/doku.php?id=wiki:namespaces" class="wikilink2" title="wiki:namespaces" rel="nofollow">命名空间</a>。
+</p>
+<pre class="code">您可以通过在页面名中使用冒号的方式来使用 [[wiki:namespaces|命名空间]]。</pre>
+
+<p>
+如果您需要关于<strong>命名空间(namespaces)</strong>的更详细的信息，请参见 <a href="https://www.dokuwiki.org/wiki%3Anamespaces" class="interwiki iw_doku" title="https://www.dokuwiki.org/wiki%3Anamespaces">wiki:namespaces</a>。
+</p>
+
+<p>
+您也可以链接到一个网页内部的某一节，只需要将该节书签的名称以一个#号分隔加在网页的地址后面即可。这是一个连向 <a href="/doku.php?id=syntax#internal" class="wikilink2" title="syntax" rel="nofollow">本节</a> 的链接。
+</p>
+<pre class="code">这是一个连向 [[syntax#internal|本节]] 的链接。</pre>
+
+<p>
+注：
+</p>
+<ul>
+<li class="level1"><div class="li">到 <a href="/doku.php?id=wiki:syntax" class="wikilink2" title="wiki:syntax" rel="nofollow">已存在页面</a> 的链接和到 <a href="/doku.php?id=wiki:nonexisting" class="wikilink2" title="wiki:nonexisting" rel="nofollow">未存在页面</a> 的链接，其外观是不同的。</div>
+</li>
+<li class="level1"><div class="li">默认情况下，DokuWiki不使用 <a href="https://en.wikipedia.org/wiki/CamelCase" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/CamelCase">CamelCase</a> 来自动建立链接，（CamelCase类似于PmWiki中的WikiWord）。但是也可以在 <a href="https://www.dokuwiki.org/config" class="interwiki iw_doku" title="https://www.dokuwiki.org/config">设置文件</a> 中启用它。 Hint: If DokuWiki is a link, then it&#039;s enabled.</div>
+</li>
+<li class="level1"><div class="li">当一节的标题改变时，该节的书签也会改变，因此，请不要太依靠网页内的链接。</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "内部链接" [2547-4170] -->
+<h3 class="sectionedit6" id="wiki间链接">Wiki间链接</h3>
+<div class="level3">
+
+<p>
+DokuWiki支持 <a href="https://www.dokuwiki.org/wiki%3Ainterwiki" class="interwiki iw_doku" title="https://www.dokuwiki.org/wiki%3Ainterwiki">Wiki间链接</a> ，即到其他wiki的链接。例如，这是一个到Wikipedia上关于Wiki的一个页面的的链接： <a href="https://en.wikipedia.org/wiki/Wiki" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/Wiki">Wiki</a>
+</p>
+<pre class="code">DokuWiki支持 [[interwiki|Wiki间链接]] ，即到其他wiki的链接。
+例如，这是一个到Wikipedia上关于Wiki的一个页面的的链接： [[wp&gt;Wiki]] </pre>
+
+</div>
+<!-- EDIT6 SECTION "Wiki间链接" [4171-4539] -->
+<h3 class="sectionedit7" id="windows共享文件夹">Windows共享文件夹</h3>
+<div class="level3">
+
+<p>
+Windows共享文件夹，例如 <a href="file://///server/share" class="windows" title="\\server\share">this</a> 也可以被识别。请注意，这只在内部 <a href="https://en.wikipedia.org/wiki/Intranet" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/Intranet">局域网</a> 等环境中才可能被成功访问。
+</p>
+<pre class="code">Windows共享文件夹，例如 [[\\server\share|this]] 也可以被识别。</pre>
+
+<p>
+注：
+</p>
+<ul>
+<li class="level1"><div class="li">出于安全原因，只有在微软IE浏览器上才能够直接访问Windows共享文件夹。</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT7 SECTION "Windows共享文件夹" [4540-4937] -->
+<h3 class="sectionedit8" id="图像链接">图像链接</h3>
+<div class="level3">
+
+<p>
+您也可以用图像来作为一个内部或者外部的链接，只需同时使用链接和图像的语法，如下所示：
+</p>
+<pre class="code">[[http://www.php.net|{{wiki:dokuwiki-128.png}}]]</pre>
+
+<p>
+<a href="http://www.php.net" class="media" title="http://www.php.net"><img src="/lib/exe/fetch.php?media=wiki:dokuwiki-128.png" class="media" alt="" /></a>
+</p>
+
+<p>
+请注意：在链接名中使用语法，只有显示图像的语法会被识别，请不要使用其它语法。
+</p>
+
+</div>
+<!-- EDIT8 SECTION "图像链接" [4938-5307] -->
+<h2 class="sectionedit9" id="脚注">脚注</h2>
+<div class="level2">
+
+<p>
+您可以使用两个连续小括号来添加脚注<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>。
+</p>
+<pre class="code">您可以使用两个连续小括号来添加脚注((看这里，这是一个脚注))。</pre>
+
+</div>
+<!-- EDIT9 SECTION "脚注" [5308-5509] -->
+<h2 class="sectionedit10" id="标题段落">标题段落</h2>
+<div class="level2">
+
+<p>
+您可以使用最多达5层的标题来使您的页面更富结构性。如果您使用了三个以上的标题，那么DokuWiki会自动在页面上生成一个名为“本页目录”的标题列表。当然，您也可以关闭这项特性，只需在编辑时在页面里加入 <code>~~NOTOC~~</code> 字样即可。
+</p>
+
+</div>
+<!-- EDIT10 SECTION "标题段落" [5510-5866] -->
+<h3 class="sectionedit11" id="h3标题">H3标题</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT11 SECTION "H3标题" [5867-5885] -->
+<h4 class="sectionedit12" id="h4标题">H4标题</h4>
+<div class="level4">
+
+</div>
+<!-- EDIT12 SECTION "H4标题" [5886-5902] -->
+<h5 class="sectionedit13" id="h5标题">H5标题</h5>
+<div class="level5">
+<pre class="code">==== H3标题 ====
+=== H4标题 ===
+== H5标题 ==</pre>
+
+<p>
+您可以通过连续的4个以上“-”号来创建一条水平分割线：
+</p>
+<hr />
+
+</div>
+<!-- EDIT13 SECTION "H5标题" [5903-6062] -->
+<h2 class="sectionedit14" id="图像和其它文件">图像和其它文件</h2>
+<div class="level2">
+
+<p>
+您可以使用双大括号来在页面中加入 <a href="https://www.dokuwiki.org/images" class="interwiki iw_doku" title="https://www.dokuwiki.org/images">图像</a> 。您还可以选择是否指定图像的显示大小。
+</p>
+
+<p>
+原始大小：                        <a href="/lib/exe/detail.php?id=%E8%AF%AD%E6%B3%95&amp;media=wiki:dokuwiki-128.png" class="media" title="wiki:dokuwiki-128.png"><img src="/lib/exe/fetch.php?media=wiki:dokuwiki-128.png" class="media" alt="" /></a>
+</p>
+
+<p>
+指定宽度：                        <a href="/lib/exe/detail.php?id=%E8%AF%AD%E6%B3%95&amp;media=wiki:dokuwiki-128.png" class="media" title="wiki:dokuwiki-128.png"><img src="/lib/exe/fetch.php?w=50&amp;tok=6b9325&amp;media=wiki:dokuwiki-128.png" class="media" alt="" width="50" /></a>
+</p>
+
+<p>
+指定宽度和高度：                  <a href="/lib/exe/detail.php?id=%E8%AF%AD%E6%B3%95&amp;media=wiki:dokuwiki-128.png" class="media" title="wiki:dokuwiki-128.png"><img src="/lib/exe/fetch.php?w=200&amp;h=50&amp;tok=cd4769&amp;media=wiki:dokuwiki-128.png" class="media" alt="" width="200" height="50" /></a>
+</p>
+
+<p>
+重新指定宽度和高度的外部图像：    <a href="/lib/exe/fetch.php?tok=206b31&amp;media=http%3A%2F%2Fde3.php.net%2Fimages%2Fphp.gif" class="media" title="http://de3.php.net/images/php.gif"><img src="/lib/exe/fetch.php?w=200&amp;h=50&amp;tok=61acaf&amp;media=http%3A%2F%2Fde3.php.net%2Fimages%2Fphp.gif" class="media" alt="" width="200" height="50" /></a>
+</p>
+<pre class="code">原始大小：                        {{wiki:dokuwiki-128.png}}
+指定宽度：                        {{wiki:dokuwiki-128.png?50}}
+指定宽度和高度：                  {{wiki:dokuwiki-128.png?200*50}}
+重新指定宽度和高度的外部图像：    {{http://de3.php.net/images/php.gif?200x50}}</pre>
+
+<p>
+使用左方或者右方的空格，您可以选择对齐方式：
+</p>
+
+<p>
+<a href="/lib/exe/detail.php?id=%E8%AF%AD%E6%B3%95&amp;media=wiki:dokuwiki-128.png" class="media" title="wiki:dokuwiki-128.png"><img src="/lib/exe/fetch.php?media=wiki:dokuwiki-128.png" class="mediaright" alt="" /></a>
+</p>
+
+<p>
+<a href="/lib/exe/detail.php?id=%E8%AF%AD%E6%B3%95&amp;media=wiki:dokuwiki-128.png" class="media" title="wiki:dokuwiki-128.png"><img src="/lib/exe/fetch.php?media=wiki:dokuwiki-128.png" class="medialeft" alt="" /></a>
+</p>
+
+<p>
+<a href="/lib/exe/detail.php?id=%E8%AF%AD%E6%B3%95&amp;media=wiki:dokuwiki-128.png" class="media" title="wiki:dokuwiki-128.png"><img src="/lib/exe/fetch.php?media=wiki:dokuwiki-128.png" class="mediacenter" alt="" /></a>
+</p>
+<pre class="code">{{ wiki:dokuwiki-128.png}}
+{{wiki:dokuwiki-128.png }}
+{{ wiki:dokuwiki-128.png }}</pre>
+
+<p>
+当然，您也可以指定一个图像的名字，将鼠标移到图像上可以看到效果。
+</p>
+
+<p>
+<a href="/lib/exe/detail.php?id=%E8%AF%AD%E6%B3%95&amp;media=wiki:dokuwiki-128.png" class="media" title="wiki:dokuwiki-128.png"><img src="/lib/exe/fetch.php?media=wiki:dokuwiki-128.png" class="mediacenter" title="这是图像的名字" alt="这是图像的名字" /></a>
+</p>
+<pre class="code">{{ wiki:dokuwiki-128.png |这是图像的名字}}</pre>
+
+<p>
+如果您指定的文件名（无论是外部的还是内部的）不是一个图像（<code>gif,jpeg,png</code>），那么它将被显示为一个链接。
+</p>
+
+</div>
+<!-- EDIT14 SECTION "图像和其它文件" [6063-7439] -->
+<h2 class="sectionedit15" id="列表">列表</h2>
+<div class="level2">
+
+<p>
+Dokuwiki支持带编号或不带编号的列表。要使用列表，在文字前加入两个空格，然后使用<code>*</code>标志不带编号的列表，用<code>-</code>标志带编号的列表。
+</p>
+<ul>
+<li class="level1"><div class="li">列表</div>
+</li>
+<li class="level1 node"><div class="li">第二项</div>
+<ul>
+<li class="level2"><div class="li">下一层</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">第三项
+</div>
+</li>
+<li class="level1"><div class="li">带编号的列表</div>
+</li>
+<li class="level1 node"><div class="li">第二项</div>
+<ul>
+<li class="level2"><div class="li">用缩进表示更深的层</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li">完了</div>
+</li>
+</ul>
+<pre class="code">  * 列表
+  * 第二项
+    * 下一层
+  * 第三项
+
+  - 带编号的列表
+  - 第二项
+    - 用缩进表示更深的层
+  - 完了</pre>
+
+</div>
+<!-- EDIT15 SECTION "列表" [7440-7937] -->
+<h2 class="sectionedit16" id="表情符号">表情符号</h2>
+<div class="level2">
+
+<p>
+DokuWiki会将一些常用的  <a href="https://en.wikipedia.org/wiki/emoticon" class="interwiki iw_wp" title="https://en.wikipedia.org/wiki/emoticon">表情符号</a> 转换为图像。除了默认的表情符号以外，您也可以在 <code>smiley</code> 文件夹中放入更多的表情图，然后在 <code>conf/smileys.conf</code> 中设置它们即可。下面是Dokuwiki包含了的表情图像：
+</p>
+<ul>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" /> %%  <img src="/lib/images/smileys/icon_cool.gif" class="icon" alt="8-)" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_eek.gif" class="icon" alt="8-O" /> %%  <img src="/lib/images/smileys/icon_eek.gif" class="icon" alt="8-O" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_sad.gif" class="icon" alt=":-(" /> %%  <img src="/lib/images/smileys/icon_sad.gif" class="icon" alt=":-(" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" /> %%  <img src="/lib/images/smileys/icon_smile.gif" class="icon" alt=":-)" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />  %%  <img src="/lib/images/smileys/icon_smile2.gif" class="icon" alt="=)" />   %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_doubt.gif" class="icon" alt=":-/" /> %%  <img src="/lib/images/smileys/icon_doubt.gif" class="icon" alt=":-/" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_doubt2.gif" class="icon" alt=":-\" /> %%  <img src="/lib/images/smileys/icon_doubt2.gif" class="icon" alt=":-\" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_confused.gif" class="icon" alt=":-?" /> %%  <img src="/lib/images/smileys/icon_confused.gif" class="icon" alt=":-?" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" /> %%  <img src="/lib/images/smileys/icon_biggrin.gif" class="icon" alt=":-D" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_razz.gif" class="icon" alt=":-P" /> %%  <img src="/lib/images/smileys/icon_razz.gif" class="icon" alt=":-P" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_surprised.gif" class="icon" alt=":-O" /> %%  <img src="/lib/images/smileys/icon_surprised.gif" class="icon" alt=":-O" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_silenced.gif" class="icon" alt=":-X" /> %%  <img src="/lib/images/smileys/icon_silenced.gif" class="icon" alt=":-X" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_neutral.gif" class="icon" alt=":-|" /> %%  <img src="/lib/images/smileys/icon_neutral.gif" class="icon" alt=":-|" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" /> %%  <img src="/lib/images/smileys/icon_wink.gif" class="icon" alt=";-)" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" /> %%  <img src="/lib/images/smileys/icon_fun.gif" class="icon" alt="^_^" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_question.gif" class="icon" alt=":?:" /> %%  <img src="/lib/images/smileys/icon_question.gif" class="icon" alt=":?:" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> %%  <img src="/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/icon_lol.gif" class="icon" alt="LOL" /> %%  <img src="/lib/images/smileys/icon_lol.gif" class="icon" alt="LOL" />  %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> %%  <img src="/lib/images/smileys/fixme.gif" class="icon" alt="FIXME" /> %%</div>
+</li>
+<li class="level1"><div class="li"><img src="/lib/images/smileys/delete.gif" class="icon" alt="DELETEME" /> %% <img src="/lib/images/smileys/delete.gif" class="icon" alt="DELETEME" /> %%</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT16 SECTION "表情符号" [7938-8657] -->
+<h2 class="sectionedit17" id="印刷样式">印刷样式</h2>
+<div class="level2">
+
+<p>
+<a href="/doku.php?id=dokuwiki" class="wikilink2" title="dokuwiki" rel="nofollow">DokuWiki</a>可以将特定字符转换为印刷时所用的样式。下面是可以识别的这类字符的列表：
+</p>
+
+<p>
+→ ← ↔ ⇒ ⇐ ⇔
+</p>
+<blockquote><div class="no">
+</div></blockquote>
+<hr />
+</div></blockquote>
+
+<p>
+
+&quot;
+</p>
+
+<p>
+He thought &#039;It&#039;s a man&#039;s world&#039;…“
+</p>
+<pre class="code">-&gt; &lt;- &lt;-&gt; =&gt; &lt;= &lt;=&gt; &gt;&gt; &lt;&lt; -- --- 640x480 (c) (tm) (r)
+&quot;He thought &#039;It&#039;s a man&#039;s world&#039;...&quot;</pre>
+
+<p>
+请注意：在配置文件中可以禁用这类自动转换。
+</p>
+
+</div>
+<!-- EDIT17 SECTION "印刷样式" [8658-9066] -->
+<h2 class="sectionedit18" id="表格">表格</h2>
+<div class="level2">
+
+<p>
+DokuWiki可以用简单的语法创建表格。 
+</p>
+<div class="table sectionedit19"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> 标题1        </th><th class="col1 leftalign"> 标题2         </th><th class="col2 leftalign"> 标题3       </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> (1,1)        </td><td class="col1 leftalign"> (1,2)         </td><td class="col2 leftalign"> (1,3)       </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> (2,1)        </td><td class="col1 leftalign" colspan="2"> 展宽的单元格               </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> (3,1)        </td><td class="col1 leftalign"> (3,2)         </td><td class="col2 leftalign"> (3,3)       </td>
+	</tr>
+</table></div>
+<!-- EDIT19 TABLE [9137-9336] -->
+<p>
+表格的每一行都以分隔符 <code>|</code> （普通行）或者 <code>^</code> （标题行）作为开头和结束。
+</p>
+<pre class="code">^ 标题1        ^ 标题2         ^ 标题3       ^
+| (1,1)        | (1,2)         | (1,3)       |
+| (2,1)        | 展宽的单元格               ||
+| (3,1)        | (3,2)         | (3,3)       |</pre>
+
+<p>
+要水平合并单元格，只需要将后一个单元格设置为空即可，如上面演示的一样。请确保每一行有相同数量的单元格分隔符！
+</p>
+
+<p>
+竖直的标题列也是可以实现的：
+</p>
+<div class="table sectionedit20"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0 leftalign">          </td><th class="col1 leftalign"> 标题1          </th><th class="col2 leftalign"> 标题2          </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<th class="col0 leftalign"> 标题3    </th><td class="col1 leftalign"> (1,2)          </td><td class="col2 leftalign"> (1,3)          </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0 leftalign"> 标题4    </th><td class="col1"> 不再合并单元格 </td><td class="col2 leftalign">                </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0 leftalign"> 标题5    </th><td class="col1 leftalign"> (2,2)          </td><td class="col2 leftalign"> (2,3)          </td>
+	</tr>
+</table></div>
+<!-- EDIT20 TABLE [9864-10068] -->
+<p>
+可以看到，单元格前面的分隔符决定了单元格的格式。
+</p>
+<pre class="code">|          ^ 标题1          ^ 标题2          ^
+^ 标题3    | (1,2)          | (1,3)          |
+^ 标题4    | 不再合并单元格 |                |
+^ 标题5    | (2,2)          | (2,3)          |</pre>
+
+<p>
+注：垂直合并单元格尚未实现。
+</p>
+
+<p>
+您可以对齐表格的文字。只需要添加多余两个的空格在您需要对齐的方向的反向即可：如果需要右对齐，在左边添加两个空格；反之，则在右边添加。在两边均添加空格可以实现中间对齐。
+</p>
+<div class="table sectionedit21"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign" colspan="3">           有对齐的表格                   </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 rightalign">        右对齐</td><td class="col1 centeralign">     居中     </td><td class="col2 leftalign">左对齐        </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign">左对齐        </td><td class="col1 rightalign">        右对齐</td><td class="col2 centeralign">     居中     </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> xxxxxxxxxxxx </td><td class="col1"> xxxxxxxxxxxx </td><td class="col2"> xxxxxxxxxxxx </td>
+	</tr>
+</table></div>
+<!-- EDIT21 TABLE [10653-10862] -->
+<p>
+下面是源文件中的格式：
+</p>
+<pre class="code">^           有对齐的表格                   ^^^
+|        右对齐|     居中     |左对齐        |
+|左对齐        |        右对齐|     居中     |
+| xxxxxxxxxxxx | xxxxxxxxxxxx | xxxxxxxxxxxx |</pre>
+
+</div>
+<!-- EDIT18 SECTION "表格" [9067-11117] -->
+<h2 class="sectionedit22" id="无格式区块">无格式区块</h2>
+<div class="level2">
+
+<p>
+您可以在文章中插入无格式区块，在这些区块中Wiki语法将不起作用。可以有三种方法：在行前加两个以上的空格（前面做样例时用的方法），或者可以使用 <code>Code</code> 或 <code>file</code> 标记。
+</p>
+<pre class="code">这是一段被code包围的区块，其中的空格都被保留了：像              &lt;-这样</pre>
+<pre class="file">和code是类似的。不过您可以用这个来表示您引用了一个文件的内容。  </pre>
+
+<p>
+要让Wiki语法解释完全失效，可以用 <code>nowiki</code> 标签包围整个区块，或者也可以简单地使用双百分号标记 <code>%%</code>。
+</p>
+
+<p>
+
+这是一段完全没有Wiki语法解释的文字，例如：http://www.splitbrain.org ， **粗体**，虽然按照语法书写，但是它们并没有被解释。
+
+</p>
+
+<p>
+如何使用这些标记，请查看这一段的源文件。
+</p>
+
+</div>
+<!-- EDIT22 SECTION "无格式区块" [11118-12017] -->
+<h2 class="sectionedit23" id="语法">语法</h2>
+<div class="level2">
+
+<p>
+<a href="/doku.php?id=dokuwiki" class="wikilink2" title="dokuwiki" rel="nofollow">DokuWiki</a> 可以将源代码作语法高亮以增加可读性。它使用称作 <a href="http://qbnz.com/highlighter/" class="urlextern" title="http://qbnz.com/highlighter/">GeSHi</a> 的通用语法高亮工具（Generic Syntax Highlighter）——所有被GeSHi支持的语言都可以在DokuWiki中得到高亮。使用code标记的方法和上面是类似的，不过需要指定使用的语言，例如： <code>&lt;code java&gt;</code>。
+</p>
+<pre class="code java"><span class="co3">/** 
+ * The HelloWorldApp class implements an application that
+ * simply displays &quot;Hello World!&quot; to the standard output.
+ */</span>
+<span class="kw1">class</span> HelloWorldApp <span class="br0">&#123;</span>
+    <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+string"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Adocs.oracle.com+javase+docs+api+system"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span><span class="st0">&quot;Hello World!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//Display the string.</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre>
+
+<p>
+现在，DokuWiki可以支持的语言有： <em>actionscript, ada, apache, asm, asp, bash, caddcl, cadlisp, c, c_mac, cpp, csharp, css, delphi, html4strict, java, javascript, lisp, lua, nsis, objc, oobas, pascal, perl, php-brief, php, python, qbasic, smarty, sql, vb, vbnet, visualfoxpro, xml</em>
+</p>
+
+</div>
+<!-- EDIT23 SECTION "语法" [12018-13006] -->
+<h2 class="sectionedit24" id="嵌入html和php">嵌入HTML和PHP</h2>
+<div class="level2">
+
+<p>
+您可以使用 <code>html</code> 或者 <code>php</code>标记在文档中嵌入HTML或PHP的代码。例如：
+</p>
+<pre class="code">&lt;html&gt;
+这是 &lt;font color=&quot;red&quot; size=&quot;+1&quot;&gt;HTML&lt;/font&gt; 代码。
+&lt;/html&gt;</pre>
+
+<p>
+<code class="code html4strict">这是 <span class="sc2">&lt;<a href="http://december.com/html/4/element/font.html"><span class="kw2">font</span></a> <span class="kw3">color</span><span class="sy0">=</span><span class="st0">&quot;red&quot;</span> <span class="kw3">size</span><span class="sy0">=</span><span class="st0">&quot;+1&quot;</span>&gt;</span>HTML<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/font.html"><span class="kw2">font</span></a>&gt;</span> 代码。</code>
+</p>
+<pre class="code">&lt;php&gt;
+echo &#039;由PHP生成的logo：&#039;;
+echo &#039;&lt;img src=&quot;&#039; . $_SERVER[&#039;PHP_SELF&#039;] . &#039;?=&#039; . php_logo_guid() . &#039;&quot; alt=&quot;PHP Logo !&quot; /&gt;&#039;;
+&lt;/php&gt;</pre>
+
+<p>
+<code class="code php"><span class="kw1">echo</span> <span class="st_h">'由PHP生成的logo：'</span><span class="sy0">;</span>
+<span class="kw1">echo</span> <span class="st_h">'&lt;img src=&quot;'</span> <span class="sy0">.</span> <span class="re0">$_SERVER</span><span class="br0">&#91;</span><span class="st_h">'PHP_SELF'</span><span class="br0">&#93;</span> <span class="sy0">.</span> <span class="st_h">'?='</span> <span class="sy0">.</span> <a href="http://www.php.net/php_logo_guid"><span class="kw3">php_logo_guid</span></a><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">.</span> <span class="st_h">'&quot; alt=&quot;PHP Logo !&quot; /&gt;'</span><span class="sy0">;</span></code>
+</p>
+
+<p>
+<strong>请注意</strong>： HTML和PHP嵌入的功能默认情况下是被禁用的，因此，您可能无法看到上面的代码运行的结果而只能够看见源代码，这取决于DokuWiki站点的设置。(?)
+</p>
+
+</div>
+<!-- EDIT24 SECTION "嵌入HTML和PHP" [13007-] --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+看这里，这是一个脚注</div>
+</div>
