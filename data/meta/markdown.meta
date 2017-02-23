@@ -1,9 +1,0 @@
-a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1484813299;s:8:"modified";i:1484814329;}s:7:"creator";s:23:"xiaohui_zhu xiaohui_zhu";s:4:"user";s:7:"xiaohui";s:11:"last_change";a:7:{s:4:"date";i:1484814329;s:2:"ip";s:12:"192.168.5.79";s:4:"type";s:1:"E";s:2:"id";s:8:"markdown";s:4:"user";s:7:"xiaohui";s:3:"sum";s:14:"增加markdown";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:7:"xiaohui";s:23:"xiaohui_zhu xiaohui_zhu";}s:5:"title";s:30:"Markdown 语法的简要规则";s:11:"description";a:2:{s:15:"tableofcontents";a:1:{i:0;a:4:{s:3:"hid";s:30:"markdown_语法的简要规则";s:5:"title";s:30:"Markdown 语法的简要规则";s:4:"type";s:2:"ul";s:5:"level";i:1;}}s:8:"abstract";s:342:"Markdown 语法的简要规则
-
-概述
-
-宗旨
-
-Markdown 的目标是实现「易读易写」。
-
-可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}s:8:"relation";a:1:{s:10:"firstimage";s:0:"";}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1484813299;s:8:"modified";i:1484814329;}s:7:"creator";s:23:"xiaohui_zhu xiaohui_zhu";s:4:"user";s:7:"xiaohui";s:11:"last_change";a:7:{s:4:"date";i:1484814329;s:2:"ip";s:12:"192.168.5.79";s:4:"type";s:1:"E";s:2:"id";s:8:"markdown";s:4:"user";s:7:"xiaohui";s:3:"sum";s:14:"增加markdown";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:7:"xiaohui";s:23:"xiaohui_zhu xiaohui_zhu";}}}
