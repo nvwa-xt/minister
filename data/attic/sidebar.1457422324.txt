@@ -1,1 +1,0 @@
-{{indexmenu>#1|js#shiki_brave.png navbar notoc tsort nsort}}
